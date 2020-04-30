@@ -1,0 +1,14 @@
+name: Cron Daily
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+
+  productive-box:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: maxam2017/productive-box@master
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: 4f37b38ff14afe0d2a8dc423d35f4b11
+          TIMEZONE: Asia/Tokyo
