@@ -1,0 +1,15 @@
+name: Cron Hourly
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+
+  activity-box:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/activity-box@master
+        env:
+          GH_PAT: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: ress997
+          GIST_ID: 559fcae74ade8f679400bfa85d0db0e6
